@@ -529,6 +529,81 @@ h1, h2, h3, h4 {
 }
 .card-body em { color: var(--blue); font-style: italic; }
 
+/* --- Trades gallery ------------------------------------------ */
+.trades { padding: clamp(4rem, 8vw, 7rem) 0; }
+.trade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.trade-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
+  display: flex;
+  flex-direction: column;
+}
+.trade-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ink);
+  box-shadow: var(--shadow-1);
+}
+.trade-photo {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.trade-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(15,15,15,.18));
+  pointer-events: none;
+}
+.trade-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(.2,.7,.2,1), filter var(--t-med);
+  filter: saturate(.95) contrast(1.02);
+}
+.trade-card:hover .trade-photo img {
+  transform: scale(1.04);
+  filter: saturate(1.1) contrast(1.05);
+}
+.trade-meta {
+  padding: 1.1rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.trade-name {
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.trade-tag {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.trades-foot {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .98rem;
+}
+.trades-foot a {
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  transition: color var(--t-fast);
+}
+.trades-foot a:hover { color: var(--accent-deep); }
+
 /* --- Services list ------------------------------------------- */
 .services { padding: clamp(4rem, 8vw, 7rem) 0; }
 .service-list {

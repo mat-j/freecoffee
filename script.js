@@ -33,7 +33,7 @@
   }
 
   const revealTargets = document.querySelectorAll(
-    '.hero-copy, .hero-visual, .section-head, .compare, .cards > .card, .service-list > li, .steps > li, .tiers > .tier, .faq-list, .cta-inner'
+    '.hero-copy, .hero-visual, .section-head, .compare, .cards > .card, .trade-grid > .trade-card, .service-list > li, .steps > li, .tiers > .tier, .faq-list, .cta-inner'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
 

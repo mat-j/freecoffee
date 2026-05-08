@@ -1,0 +1,8 @@
+{
+  "name": "freecoffee",
+  "version": "1.0.0",
+  "description": "Free Coffee Website",
+  "scripts": {
+    "dev": "npx serve -l 3000"
+  }
+}
